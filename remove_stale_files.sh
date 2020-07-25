@@ -28,13 +28,13 @@ else
   # Check if number of files is equal 0
   if [ $count -eq 0 ]; then
     # Append no files to remove to the log file
-    echo "["$DATE"]" "No files to remove from" $i "directory." >> /var/www/html/Doc_Directoryremove_stale_log.txt
+    echo "["$DATE"]" "No files to remove from" $i "directory." >> /var/www/html/Doc_Directory/remove_stale_log.txt
   else
     # Else execute removal command
     find /var/www/html/Temp_Directory/$i/* -mmin +360 -exec rm {} \;
 
     # Append files removed to the log file
-    echo "["$DATE"] Removed files from" $i "directory." >> /var/www/html/Doc_Directoryremove_stale_log.txt
+    echo "["$DATE"] Removed files from" $i "directory." >> /var/www/html/Doc_Directory/remove_stale_log.txt
   fi
 fi
 done
